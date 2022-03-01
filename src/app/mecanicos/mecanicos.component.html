@@ -1,0 +1,36 @@
+<div class="card border-primary mb-3" style="max-width: 80%;" style="position: top">
+    <div class="card-header">Mecanicos</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Mecanicos</h5>
+      <div class="my-2 text-left">
+          <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/mecanicos/form']">Crear Mecanicos</button>
+      </div>
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Tipo Documento</th>
+                  <th>Documento</th>
+                  <th>Nombre</th>
+                  <th>Celular</th>
+                  <th>Email</th>
+                  <th>Direccion</th>                  
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let mecanico of Mecanicos">
+                  <td>{{mecanico.tipoDocumento}}</td>
+                  <td>{{mecanico.documento}}</td>
+                  <td>{{mecanico.primerNombre+' '
+                      +mecanico.segundoNombre
+                      +' '+mecanico.primerApellido
+                      +' '+mecanico.segundoApellido}}</td>
+                  <td>{{mecanico.celular}}</td>
+                  <td>{{mecanico.email}}</td>
+                  <td>{{mecanico.direccion}}</td>
+
+              </tr>
+
+          </tbody>
+      </table>
+      
+    </div>
